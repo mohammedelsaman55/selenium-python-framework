@@ -103,6 +103,8 @@ PythonProject
 └── .gitignore
 ```
 
+---
+
 # 📁 Project Components
 
 This framework is organized using the **Page Object Model (POM)** to improve readability, maintainability, and scalability.
@@ -174,7 +176,9 @@ Responsibilities include:
 
 - View Profile Information
 - Edit Profile
+- Country Selection
 - Change Password
+- Change Profile Photo
 - Save Changes
 - Logout
 
@@ -239,6 +243,7 @@ Examples:
 - Wait for Clickable Element
 - Wait for URL
 - Wait for Visibility
+- Wait for Element Presence
 
 ---
 
@@ -390,13 +395,20 @@ Examples include:
 
 ## 📂 profile/
 
-This module verifies all Profile features.
+This module verifies all Profile features including profile information, editing, country selection, password management, and profile photo management.
 
 ### Test Files
 
 ### 📄 test_profile_view.py
 
 Verifies that profile information is displayed correctly.
+
+Covered scenarios include:
+
+- Profile Page Display
+- User Information
+- Available Actions
+- Profile Elements Visibility
 
 ---
 
@@ -409,8 +421,10 @@ Examples include:
 - Edit First Name
 - Edit Last Name
 - Edit Phone Number
+- Edit Address
 - Save Changes
-- Field Validations
+- Success Message
+- Data Persistence
 
 ---
 
@@ -422,6 +436,7 @@ Examples include:
 
 - Required Fields
 - Maximum Length
+- Invalid Phone Number
 - Input Validation
 
 ---
@@ -461,6 +476,19 @@ Examples include:
 - Country Selection
 - Search
 - Selection Validation
+
+---
+
+### 📄 test_profile_photo.py
+
+Tests the Profile Photo feature.
+
+Examples include:
+
+- Upload Profile Photo
+- Verify Upload Success Message
+- Verify Save Button Enabled
+- Save Profile Photo Successfully
 
 ---
 
@@ -518,6 +546,16 @@ Contains manual documentation for automated scenarios.
 - authentication.md
 - profile.md
 - users.md
+
+The **profile.md** document includes:
+
+- Profile View
+- Data Validation
+- Edit Profile
+- Validation Scenarios
+- Change Password
+- Change Email
+- Profile Photo
 
 These documents describe the manual test cases implemented by the automation framework.
 
@@ -605,6 +643,14 @@ pytest tests/authentication
 
 ```bash
 pytest tests/profile
+```
+
+---
+
+## Run Profile Photo Tests
+
+```bash
+pytest tests/profile/test_profile_photo.py
 ```
 
 ---
@@ -732,8 +778,6 @@ Available documents include:
 
 These files describe the manual test scenarios implemented by the automation framework.
 
----
-
 # 💡 Best Practices Used
 
 This framework follows industry-standard automation testing practices, including:
@@ -751,6 +795,8 @@ This framework follows industry-standard automation testing practices, including
 - ✅ Easy Maintenance
 - ✅ Scalable Framework Design
 
+---
+
 # 📊 Project Highlights
 
 This framework includes:
@@ -759,6 +805,7 @@ This framework includes:
 - Modular Test Architecture
 - Authentication Module Automation
 - Profile Module Automation
+- Profile Photo Automation
 - Users Module Automation
 - Reusable Test Data
 - Reusable Locators
@@ -769,6 +816,31 @@ This framework includes:
 - Clean Folder Structure
 - Git Version Control
 - GitHub Repository
+
+---
+
+# 📈 Automation Status
+
+| Module | Automated | Total |
+|----------|----------:|------:|
+| Authentication | 8 | 8 |
+| Profile | 42 | 48 |
+| Users | In Progress | - |
+
+---
+
+### Latest Execution
+
+```text
+42 passed
+0 failed
+```
+
+Current Profile Automation Coverage
+
+```text
+87.5%
+```
 
 ---
 

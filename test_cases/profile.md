@@ -1,6 +1,8 @@
 # Profile Test Cases
 
-## Profile View
+---
+
+# Profile View
 
 | ID | Test Case | Status |
 |----|-----------|---------|
@@ -21,7 +23,7 @@
 
 ---
 
-## Data Validation
+# Data Validation
 
 | ID | Test Case | Status |
 |----|-----------|---------|
@@ -35,7 +37,7 @@
 
 ---
 
-## Edit Profile
+# Edit Profile
 
 | ID | Test Case | Status |
 |----|-----------|---------|
@@ -54,18 +56,18 @@
 
 ---
 
-## Validation Scenarios
+# Validation Scenarios
 
 | ID | Test Case | Status |
 |----|-----------|---------|
-| PROFILE-034 | Empty First Name | Passed ✅ |
-| PROFILE-035 | Empty Last Name | Passed ✅ |
-| PROFILE-036 | Phone Number Accepts Invalid Values | Passed ✅ |
-| PROFILE-037 | Address Maximum Length Bug Detection | Passed ✅ |
+| PROFILE-034 | Empty First Name Validation | Passed ✅ |
+| PROFILE-035 | Empty Last Name Validation | Passed ✅ |
+| PROFILE-036 | Invalid Phone Number Validation (Bug Detected) | Passed ✅ |
+| PROFILE-037 | Address Maximum Length Validation (Bug Detected) | Passed ✅ |
 
 ---
 
-## Change Email
+# Change Email
 
 | ID | Test Case | Status |
 |----|-----------|---------|
@@ -75,7 +77,7 @@
 
 ---
 
-## Change Password
+# Change Password
 
 | ID | Test Case | Status |
 |----|-----------|---------|
@@ -85,15 +87,15 @@
 
 ---
 
-## Profile Photo
+# Profile Photo
 
 | ID | Test Case | Status |
 |----|-----------|---------|
-| PROFILE-044 | Open Change Photo Dialog | Deferred ⏸️ |
-| PROFILE-045 | Upload Valid Image | Deferred ⏸️ |
-| PROFILE-046 | Uploaded Image Preview Displayed | Deferred ⏸️ |
-| PROFILE-047 | Save Profile Photo Successfully | Deferred ⏸️ |
-| PROFILE-048 | Profile Photo Persist After Refresh | Deferred ⏸️ |
+| PROFILE-044 | Upload Valid Profile Photo | Passed ✅ |
+| PROFILE-045 | Image Upload Success Message Displayed | Passed ✅ |
+| PROFILE-046 | Save Button Enabled After Successful Upload | Passed ✅ |
+| PROFILE-047 | Save Profile Photo Successfully | Passed ✅ |
+| PROFILE-048 | Profile Photo Persists After Refresh | Deferred ⏸️ |
 
 ---
 
@@ -102,88 +104,61 @@
 ## Completed
 
 ### Profile View
-
-- PROFILE-001 - Profile Page Title Displayed ✅
-- PROFILE-002 - Profile Name Displayed ✅
-- PROFILE-003 - First Name Field Displayed ✅
-- PROFILE-004 - Last Name Field Displayed ✅
-- PROFILE-005 - Email Field Displayed ✅
-- PROFILE-006 - Phone Number Component Displayed ✅
-- PROFILE-007 - Country Selector Dropdown Displayed ✅
-- PROFILE-008 - Password Field Displayed ✅
-- PROFILE-009 - Address Field Displayed ✅
-- PROFILE-010 - Team Dropdown Displayed ✅
-- PROFILE-011 - Save Changes Button Displayed ✅
-- PROFILE-012 - Change Photo Link Displayed ✅
-- PROFILE-013 - Change Email Link Displayed ✅
-- PROFILE-014 - Change Password Link Displayed ✅
+- PROFILE-001 → PROFILE-014 ✅
 
 ### Data Validation
-
-- PROFILE-015 - First Name Value Loaded ✅
-- PROFILE-016 - Last Name Value Loaded ✅
-- PROFILE-017 - Email Value Loaded ✅
-- PROFILE-018 - Phone Number Value Loaded ✅
-- PROFILE-019 - Selected Country Value Loaded ✅
-- PROFILE-020 - Address Value Loaded ✅
-- PROFILE-021 - Team Value Loaded ✅
+- PROFILE-015 → PROFILE-021 ✅
 
 ### Edit Profile
-
-- PROFILE-022 - Edit First Name ✅
-- PROFILE-023 - Edit Last Name ✅
-- PROFILE-024 - Edit Address ✅
-- PROFILE-025 - Edit Phone Number ✅
-- PROFILE-026 - Country Dropdown Opens ✅
-- PROFILE-027 - Search Country In Dropdown ✅
-- PROFILE-028 - Select Country From Dropdown ✅
-- PROFILE-029 - Save Button Disabled Without Changes ✅
-- PROFILE-030 - Save Button Enabled After Data Change ✅
-- PROFILE-031 - Save Profile Successfully ✅
-- PROFILE-032 - Success Message Displayed ✅
-- PROFILE-033 - Updated Data Persist After Refresh ✅
+- PROFILE-022 → PROFILE-033 ✅
 
 ### Validation Scenarios
-
-- PROFILE-034 - Empty First Name ✅
-- PROFILE-035 - Empty Last Name ✅
-- PROFILE-036 - Phone Number Accepts Invalid Values ✅
-- PROFILE-037 - Address Maximum Length Bug Detection ✅
+- PROFILE-034 → PROFILE-037 ✅
 
 ### Change Password
+- PROFILE-041 → PROFILE-043 ✅
 
-- PROFILE-041 - Open Change Password Popup ✅
-- PROFILE-042 - Change Password Successfully ✅
-- PROFILE-043 - Invalid Password Validation Displayed ✅
+### Profile Photo
+- PROFILE-044 → PROFILE-047 ✅
+
+---
+
+# Pending
+
+### Change Email
+- PROFILE-038
+- PROFILE-039
+- PROFILE-040
+
+### Profile Photo
+- PROFILE-048
 
 ---
 
 # Execution Summary
 
 | Metric | Value |
-|----------|----------|
+|----------|------:|
 | Total Test Cases | 48 |
-| Automated | 38 |
-| Passed | 38 |
+| Automated | 42 |
+| Passed | 42 |
 | Failed | 0 |
-| In Progress | 0 |
-| Deferred | 8 |
-| Not Started | 2 |
+| Deferred | 4 |
 
 ---
 
 # Current Coverage
 
 | Module | Automated | Total |
-|----------|----------|
-| Profile | 38 | 48 |
+|----------|----------:|------:|
+| Profile | 42 | 48 |
 
-Coverage: **79.2%**
+Coverage: **87.5%**
 
 ---
 
 # Latest Execution Result
 
 ```bash
-38 passed
+42 passed
 0 failed

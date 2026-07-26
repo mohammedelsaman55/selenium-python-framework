@@ -2,6 +2,7 @@ from selenium.webdriver.common.keys import Keys
 from locators.profile_locators import ProfileLocators
 from utils.waits import (
     wait_for_element,
+    wait_for_presence_of_element,
     wait_for_clickable_element,
     wait_for_overlay_to_disappear
 )
@@ -89,6 +90,23 @@ class ProfilePage:
             self.driver,
             ProfileLocators.CHANGE_PHOTO_LINK
         ).is_displayed()
+
+    def click_change_photo(self):
+
+        wait_for_element(
+            self.driver,
+            ProfileLocators.CHANGE_PHOTO_LINK
+        ).click()
+
+    def upload_profile_photo(
+            self,
+            file_path
+    ):
+
+        wait_for_presence_of_element(
+            self.driver,
+            ProfileLocators.PHOTO_UPLOAD_INPUT
+        ).send_keys(file_path)
 
     def is_change_email_link_displayed(self):
         return wait_for_element(
@@ -256,6 +274,13 @@ class ProfilePage:
         return wait_for_element(
             self.driver,
             ProfileLocators.SUCCESS_TOAST_MESSAGE
+        ).is_displayed()
+
+    def is_image_uploaded_success_message_displayed(self):
+
+        return wait_for_element(
+            self.driver,
+            ProfileLocators.IMAGE_UPLOADED_SUCCESS_MESSAGE
         ).is_displayed()
 
     def is_first_name_required_message_displayed(self):

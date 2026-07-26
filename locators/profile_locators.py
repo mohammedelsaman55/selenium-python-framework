@@ -78,6 +78,11 @@ class ProfileLocators:
         "//span[text()='Change photo']"
     )
 
+    PHOTO_UPLOAD_INPUT = (
+        By.XPATH,
+        "//input[@type='file']"
+    )
+
     CHANGE_EMAIL_LINK = (
         By.XPATH,
         "//label[@for='email_address']/following::small[text()='Change'][1]"
@@ -131,6 +136,11 @@ class ProfileLocators:
     SUCCESS_TOAST_MESSAGE = (
         By.XPATH,
         "//*[contains(text(),'Profile updated successfully')]"
+    )
+
+    IMAGE_UPLOADED_SUCCESS_MESSAGE = (
+        By.XPATH,
+        "//*[contains(text(),'Image uploaded successfully')]"
     )
 
     CHANGE_PASSWORD_POPUP_TITLE = (
