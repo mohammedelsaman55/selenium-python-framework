@@ -1,10 +1,9 @@
-import time
-
 from selenium.webdriver.common.keys import Keys
 from locators.profile_locators import ProfileLocators
 from utils.waits import (
     wait_for_element,
-    wait_for_clickable_element
+    wait_for_clickable_element,
+    wait_for_overlay_to_disappear
 )
 
 
@@ -420,19 +419,21 @@ class ProfilePage:
 
     def logout(self):
 
-        time.sleep(2)
+        wait_for_overlay_to_disappear(
+            self.driver
+        )
 
         wait_for_clickable_element(
             self.driver,
             ProfileLocators.PROFILE_AVATAR
         ).click()
 
-        wait_for_element(
+        wait_for_clickable_element(
             self.driver,
             ProfileLocators.LOGOUT_BUTTON
         ).click()
 
-        wait_for_element(
+        wait_for_clickable_element(
             self.driver,
             ProfileLocators.CONFIRM_LOGOUT_BUTTON
         ).click()

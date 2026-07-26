@@ -1,5 +1,3 @@
-import time
-
 from pages.profile_page import ProfilePage
 
 from data.test_data import (
@@ -46,8 +44,6 @@ def test_access_dashboard_after_logout(logged_in_user):
 
 
 def test_access_login_while_logged_in(logged_in_user):
-
-    time.sleep(5)
 
     logged_in_user.get(
         BASE_URL + "/dashboard/login"

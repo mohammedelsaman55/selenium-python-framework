@@ -213,6 +213,7 @@ def test_empty_phone_number_validation(
         profile_page.is_phone_required_message_displayed()
     )
 
+
 def test_address_maximum_length_validation(
         logged_in_user
 ):

@@ -144,6 +144,7 @@ def test_change_password_successfully(
         "/login"
     )
 
+
 def test_login_with_restored_password(
         driver
 ):

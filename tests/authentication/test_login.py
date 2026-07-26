@@ -223,7 +223,7 @@ def test_email_with_leading_spaces(driver):
     login_page = LoginPage(driver)
 
     login_page.login(
-        "   wogus@mailinator.com",
+        f"   {VALID_EMAIL}",
         VALID_PASSWORD
     )
 
@@ -241,7 +241,7 @@ def test_email_with_trailing_spaces(driver):
     login_page = LoginPage(driver)
 
     login_page.login(
-        "wogus@mailinator.com   ",
+        f"{VALID_EMAIL}   ",
         VALID_PASSWORD
     )
 

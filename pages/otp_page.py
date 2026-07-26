@@ -8,7 +8,6 @@ class OtpPage:
         self.driver = driver
 
     def enter_otp(self, otp):
-
         wait_for_element(
             self.driver,
             OtpLocators.OTP_INPUTS
@@ -18,11 +17,10 @@ class OtpPage:
             *OtpLocators.OTP_INPUTS
         )
 
-        for i in range(len(otp)):
-            otp_inputs[i].send_keys(otp[i])
+        for index, digit in enumerate(otp):
+            otp_inputs[index].send_keys(digit)
 
     def verify_code(self):
-
         wait_for_element(
             self.driver,
             OtpLocators.VERIFY_BUTTON

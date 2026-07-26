@@ -30,6 +30,7 @@ def test_country_selector_dropdown_displayed(logged_in_user):
     profile_page = ProfilePage(logged_in_user)
     assert profile_page.is_country_selector_dropdown_displayed()
 
+
 def test_phone_number_field_displayed(logged_in_user):
     profile_page = ProfilePage(logged_in_user)
     assert profile_page.is_phone_number_field_displayed()

@@ -164,6 +164,7 @@ def test_empty_state_displayed_for_invalid_search(
         users_page.is_no_results_displayed()
     )
 
+
 def test_previous_button_displayed(
         users_page
 ):
