@@ -1,8 +1,13 @@
 from selenium.webdriver.common.by import By
 
 from locators.users_locators import UsersLocators
-from utils.waits import wait_for_element
 
+from utils.waits import (
+    wait_for_element,
+    wait_for_presence_of_element,
+    wait_for_url_contains,
+    wait_for_overlay_to_disappear,
+)
 
 class UsersPage:
 
@@ -202,3 +207,126 @@ class UsersPage:
             self.driver,
             UsersLocators.SHOWING_RECORDS_TEXT
         ).text
+
+    def get_total_users_counter(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.TOTAL_USERS_COUNTER
+        ).text
+
+    def get_active_users_counter(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.ACTIVE_USERS_COUNTER
+        ).text
+
+    def get_inactive_users_counter(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.INACTIVE_USERS_COUNTER
+        ).text
+
+    def open_first_user_actions(self):
+        wait_for_element(
+            self.driver,
+            UsersLocators.FIRST_USER_ACTIONS_BUTTON
+        ).click()
+
+    def is_details_option_displayed(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.DETAILS_OPTION
+        ).is_displayed()
+
+    def is_activate_option_displayed(self):
+
+        return len(
+            self.driver.find_elements(
+                *UsersLocators.ACTIVATE_OPTION
+            )
+        ) > 0
+
+    def is_deactivate_option_displayed(self):
+
+        return len(
+            self.driver.find_elements(
+                *UsersLocators.DEACTIVATE_OPTION
+            )
+        ) > 0
+
+    def open_details(self):
+        self.open_first_user_actions()
+
+        details = wait_for_element(
+            self.driver,
+            UsersLocators.DETAILS_OPTION
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            details
+        )
+
+        wait_for_url_contains(
+            self.driver,
+            "user-details"
+        )
+
+        wait_for_overlay_to_disappear(
+            self.driver
+        )
+
+        wait_for_presence_of_element(
+            self.driver,
+            UsersLocators.FIRST_NAME_INPUT
+        )
+
+    def is_user_details_page_opened(self):
+
+        return (
+            "/dashboard/user-details/"
+            in
+            self.driver.current_url
+        )
+
+    def get_first_name(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.FIRST_NAME_INPUT
+        ).get_attribute("value")
+
+    def update_first_name(self, first_name):
+
+        first_name_input = wait_for_element(
+            self.driver,
+            UsersLocators.FIRST_NAME_INPUT
+        )
+
+        first_name_input.clear()
+        first_name_input.send_keys(first_name)
+
+    def is_save_changes_button_enabled(self):
+        button = self.driver.find_element(
+            *UsersLocators.SAVE_CHANGES_BUTTON
+        )
+
+        return button.is_enabled()
+
+    def click_save_changes(self):
+
+        wait_for_element(
+            self.driver,
+            UsersLocators.SAVE_CHANGES_BUTTON
+        ).click()
+
+    def is_success_message_displayed(self):
+
+        return wait_for_element(
+            self.driver,
+            UsersLocators.SUCCESS_MESSAGE
+        ).is_displayed()

@@ -8,6 +8,21 @@ class UsersLocators:
         "//strong[text()='Users']"
     )
 
+    TOTAL_USERS_COUNTER = (
+        By.XPATH,
+        "(//div[contains(@class,'rounded') and .//strong])[1]//strong"
+    )
+
+    ACTIVE_USERS_COUNTER = (
+        By.XPATH,
+        "(//div[contains(@class,'rounded') and .//strong])[2]//strong"
+    )
+
+    INACTIVE_USERS_COUNTER = (
+        By.XPATH,
+        "(//div[contains(@class,'rounded') and .//strong])[3]//strong"
+    )
+
     CREATE_NEW_USER_BUTTON = (
         By.XPATH,
         "//strong[text()='Create New User']/ancestor::button"
@@ -141,4 +156,39 @@ class UsersLocators:
     SHOWING_RECORDS_TEXT = (
         By.XPATH,
         "//div[contains(text(),'Showing')]"
+    )
+
+    FIRST_USER_ACTIONS_BUTTON = (
+        By.XPATH,
+        "//tbody/tr[1]//img[@alt='actions']/parent::button"
+    )
+
+    DETAILS_OPTION = (
+        By.XPATH,
+        "//div[@role='menuitem'][.//strong[text()='Details']]"
+    )
+    
+    ACTIVATE_OPTION = (
+        By.XPATH,
+        "//strong[text()='Activate']"
+    )
+
+    DEACTIVATE_OPTION = (
+        By.XPATH,
+        "//strong[text()='Deactivate']"
+    )
+
+    FIRST_NAME_INPUT = (
+        By.XPATH,
+        "//label[contains(.,'First Name')]/following::input[1]"
+    )
+
+    SAVE_CHANGES_BUTTON = (
+        By.XPATH,
+        "//button[@type='submit' and contains(.,'Save Changes')]"
+    )
+
+    SUCCESS_MESSAGE = (
+        By.XPATH,
+        "//*[contains(text(),'User updated successfully')]"
     )
